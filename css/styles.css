@@ -21,38 +21,38 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
    ============================================================ */
 :root {
     /* Colors - TODO: Customize your color palette */
-    --color-primary: /* Your primary color */;
-    --color-primary-dark: /* Darker shade */;
-    --color-secondary: /* Secondary color */;
-    --color-text: /* Main text color */;
-    --color-text-light: /* Lighter text */;
-    --color-background: /* Page background */;
-    --color-background-alt: /* Alternate background */;
-    --color-border: /* Border color */;
+    --color-primary:lightgray;
+    --color-primary-dark:rgb(82, 80, 80);
+    --color-secondary:yellow;
+    --color-text: red;
+    --color-text-light: blue;
+    --color-background: lightblue;
+    --color-background-alt: #f2f2f2;
+    --color-border: #222;
 
     /* Typography - TODO: Define your font sizes */
-    --font-family: /* Your font stack */;
-    --font-size-base: /* Base size, e.g., 16px */;
-    --font-size-sm: /* Small text */;
-    --font-size-lg: /* Large text */;
-    --font-size-xl: /* Extra large */;
-    --font-size-2xl: /* Headings */;
-    --font-size-3xl: /* Large headings */;
+    --font-family: ariel;
+    --font-size-base:  16px ;
+    --font-size-sm:  Small text ;
+    --font-size-lg:  Large text ;
+    --font-size-xl:  Extra large ;
+    --font-size-2xl:  Headings ;
+    --font-size-3xl:  Large headings ;
 
     /* Spacing - TODO: Define spacing scale */
-    --spacing-xs: /* Extra small */;
-    --spacing-sm: /* Small */;
-    --spacing-md: /* Medium */;
-    --spacing-lg: /* Large */;
-    --spacing-xl: /* Extra large */;
+    --spacing-xs: Extra small ;
+    --spacing-sm:  Small ;
+    --spacing-md:  Medium ;
+    --spacing-lg:  Large ;
+    --spacing-xl:  Extra large ;
 
     /* Layout */
-    --max-width: /* Container max-width */;
-    --border-radius: /* Default border radius */;
+    --max-width:  Container max-width ;
+    --border-radius:  Default border radius ;
 
     /* Transitions */
-    --transition-fast: /* Fast transition */;
-    --transition-normal: /* Normal transition */;
+    --transition-fast:  Fast transition ;
+    --transition-normal:  Normal transition ;
 }
 
 /* ============================================================
@@ -62,27 +62,36 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
 *,
 *::before,
 *::after {
-    /* TODO: box-sizing, margin, padding reset */
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 }
 
 html {
-    /* TODO: scroll-behavior, font-size */
+    scroll-behavior: auto;
+    font-size: var(--font-size-3xl);
 }
 
 body {
-    /* TODO: font-family, color, background-color, line-height */
+   padding: 0%;
+   margin: 0%;
+   box-sizing: border-box; 
+   margin-bottom: var(--spacing-xl);
 }
 
 img {
-    /* TODO: Make images responsive */
+    width: 200px;
 }
 
 a {
-    /* TODO: Link styles */
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family);
 }
 
 a:hover {
-    /* TODO: Link hover state */
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-xl);
 }
 
 ul {
