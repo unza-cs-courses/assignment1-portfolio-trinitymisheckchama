@@ -21,44 +21,40 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
    ============================================================ */
 :root {
     /* Colors - TODO: Customize your color palette */
-    --color-primary:lightgray;
-    --color-primary-dark:rgb(82, 80, 80);
-    --color-secondary:yellow;
-    --color-text: red;
-    --color-text-light: blue;
-    --color-background: lightblue;
-    --color-background-alt: #f2f2f2;
-    --color-border: #222;
+    --color-primary:#2563eb;
+    --color-primary-dark:#1e40af;
+    --color-secondary:#facc15;
+    --color-text: #222;
+    --color-text-light: #555;
+    --color-background:#f8fafc ;
+    --color-background-alt: #ffffff;
+    --color-border: #e5e7eb;
 
     /* Typography - TODO: Define your font sizes */
-    --font-family: ariel;
-    --font-size-base:  16px ;
-    --font-size-sm:  Small text ;
-    --font-size-lg:  Large text ;
-    --font-size-xl:  Extra large ;
-    --font-size-2xl:  Headings ;
-    --font-size-3xl:  Large headings ;
+    --font-family: Arial,sans-serif;
+    --font-size-base:  1rem;
+    --font-size-sm:  0.8rem;
+    --font-size-lg:  1.2rem;
+    --font-size-xl:  1.7rem;
+    --font-size-2xl:  2rem ;
+    --font-size-3xl:  2.5rem ;
 
     /* Spacing - TODO: Define spacing scale */
-    --spacing-xs: Extra small ;
-    --spacing-sm:  Small ;
-    --spacing-md:  Medium ;
-    --spacing-lg:  Large ;
-    --spacing-xl:  Extra large ;
+    --spacing-xs:  0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem ;
+    --spacing-lg: 2rem ;
+    --spacing-xl: 3rem  ;
 
     /* Layout */
-    --max-width:  Container max-width ;
-    --border-radius:  Default border radius ;
+    --max-width: 110px;
+    --border-radius:  10px ;
 
     /* Transitions */
-    --transition-fast:  Fast transition ;
+    --transition-fast:  0.5s ease;
     --transition-normal:  Normal transition ;
-}
+   }         
 
-/* ============================================================
-   CSS RESET / BASE STYLES
-   TODO: Add your CSS reset
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -68,327 +64,232 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
 }
 
 html {
-    scroll-behavior: auto;
-    font-size: var(--font-size-3xl);
+    scroll-behavior: smooth;
+    font-size:16px;
 }
 
 body {
-   padding: 0%;
-   margin: 0%;
-   box-sizing: border-box; 
-   margin-bottom: var(--spacing-xl);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6rem;
 }
 
 img {
-    width: 200px;
+   max-width: 50%;
+   border-radius: var(--border-radius);
 }
 
-a {
-    color: var(--color-text);
-    font-size: var(--font-size-sm);
-    font-family: var(--font-family);
+section{
+    padding: var(--spacing-xl);
 }
+h1{
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+}
+img{
+    max-width: 80px;
+    border-radius: 10px;
+}
+header{
+    background: var(--color-background-alt);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    position: sticky;
+    top: 0;
+}
+.nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+.navbar{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+}
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+nav li a{
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: bold;
+    font-size: 16px;
+    transition: var(--transition-normal);
+    text-align: right;
+}
+.navbar  li a:hover{
+    color: var(--color-primary);
+}
+.logo img{
+    height: 80px;
+    display: block;
+}
+.check{
+    border-radius: 15px;
 
-a:hover {
+}
+.home{
+    text-align: center;
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 5px ;
+}
+.home h1{
+    font-size: var(--font-size-3xl);
+}
+.home a{
+    transition: var(--transition-fast);
+    margin-top: var(--spacing-md);
+    font-weight: bold;
+}
+.home a:hover{
+    background:whitesmoke;
+    font-size: larger;
+    border-radius: 15px;
+}
+.about div{
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--color-primary);
+}
+.about h1{
+    margin-bottom: var(--spacing-md);
+}
+.about p{
+    margin-bottom: var(--spacing-lg);
+}
+.about img{
+    display: block;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+.about ul{
+    list-style: none;
+    margin-top: var(--spacing-md);
+}
+.about ul li{
+    background: var(--color-background-alt);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    display: inline-block;
+}
+.projects{
+    background: var(--color-primary);
+
+}
+.project-grid{
+    display: grid;
+    gap: 2rem;
+}
+.projects > div{
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+.project-card{
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 5);
+}
+.project-card:hover{
+    transform: translateY(-5px);
+}
+.project-card h3{
+    margin-bottom: var(--spacing-sm);
+}
+.project-card a{
+    display: inline-block;
+    margin-top: var(--spacing-xl);
     color: var(--color-primary-dark);
-    font-size: var(--font-size-xl);
+    font-weight: bold;
+}
+.contact form{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    
+}
+.contact input, .contact textarea{
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+}
+.contact input:focus, .contact textarea:focus{
+    outline: none;
+    border-color: var(--color-primary);
+}
+footer{
+    background: var(--color-primary-dark);
+    color: white;
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+footer a{
+    color: white;
+    text-decoration: none;
+
+}
+footer a:hover{
+    color: var(--color-secondary);
 }
 
-ul {
-    /* TODO: List reset */
-}
 
-/* ============================================================
-   UTILITY CLASSES
-   TODO: Create reusable utility classes
-   ============================================================ */
-.container {
-    /* TODO: Container styles
-     * - width: 100%
-     * - max-width
-     * - margin: 0 auto
-     * - padding
-     */
-}
 
-/* ============================================================
-   BUTTONS
-   TODO: Style your buttons
-   ============================================================ */
-.btn {
-    /* TODO: Base button styles
-     * - display, padding
-     * - border, border-radius
-     * - font-size, font-weight
-     * - text-align, cursor
-     * - transition
-     */
-}
 
-.btn--primary {
-    /* TODO: Primary button (filled) */
-}
-
-.btn--primary:hover {
-    /* TODO: Primary button hover */
-}
-
-.btn--outline {
-    /* TODO: Outline button (bordered) */
-}
-
-.btn--outline:hover {
-    /* TODO: Outline button hover */
-}
-
-.btn--small {
-    /* TODO: Small button variant */
-}
-
-/* ============================================================
-   HEADER & NAVIGATION
-   TODO: Style navigation using Flexbox
-   Requirements:
-   - Fixed or sticky header
-   - Logo on left, nav links on right
-   - Mobile-friendly (links stack or hamburger menu)
-   ============================================================ */
-.header {
-    /* TODO: Style the header
-       Consider: position, background, padding, box-shadow, z-index */
-}
-
-.nav {
-    /* TODO: Use Flexbox for navigation layout
-     * - display: flex
-     * - justify-content: space-between
-     * - align-items: center
-     */
-}
-
-.nav__logo a {
-    /* TODO: Logo styles */
-}
-
-.nav__menu {
-    /* TODO: Style navigation menu
-       Mobile: Stack vertically or hide
-       Desktop: Horizontal with Flexbox */
-}
-
-.nav__menu a {
-    /* TODO: Navigation link styles */
-}
-
-.nav__menu a:hover {
-    /* TODO: Navigation link hover */
-}
-
-/* ============================================================
-   HERO SECTION
-   TODO: Style hero section
-   ============================================================ */
-.hero {
-    /* TODO: Style hero section
-       Consider: min-height, background, centering content
-       Use Flexbox for centering */
-}
-
-.hero__content h1 {
-    /* TODO: Style your name */
-}
-
-.hero__tagline {
-    /* TODO: Style tagline */
-}
-
-/* ============================================================
-   ABOUT SECTION
-   TODO: Style about section using CSS Grid or Flexbox
-   ============================================================ */
-.about {
-    /* TODO: Section padding */
-}
-
-.about h2 {
-    /* TODO: Section heading */
-}
-
-.about__content {
-    /* TODO: Use CSS Grid or Flexbox for layout
-       Mobile: Stack image above text
-       Desktop: Side by side */
-}
-
-.about__image img {
-    /* TODO: Style profile image */
-}
-
-.about__text p {
-    /* TODO: Paragraph styles */
-}
-
-.about__text h3 {
-    /* TODO: Subheading styles */
-}
-
-.skills-list {
-    /* TODO: Style skills list
-       Consider: Flexbox, tags/badges style */
-}
-
-.skills-list li {
-    /* TODO: Individual skill badge */
-}
-
-/* ============================================================
-   PROJECTS SECTION
-   TODO: Style projects using CSS Grid
-   ============================================================ */
-.projects {
-    /* TODO: Section styling */
-}
-
-.projects h2 {
-    /* TODO: Section heading */
-}
-
-.projects__grid {
-    /* TODO: Use CSS Grid for project cards
-       Mobile: 1 column
-       Tablet: 2 columns
-       Desktop: 3 columns */
-}
-
-.project-card {
-    /* TODO: Style project cards
-     * - background, border-radius, overflow
-     * - box-shadow, transition
-     */
-}
-
-.project-card:hover {
-    /* TODO: Card hover effect */
-}
-
-.project-card img {
-    /* TODO: Project image */
-}
-
-.project-card__content {
-    /* TODO: Card content area */
-}
-
-.project-card__content h3 {
-    /* TODO: Project title */
-}
-
-.project-card__content p {
-    /* TODO: Project description */
-}
-
-.project-card__links {
-    /* TODO: Links container (Flexbox) */
-}
-
-/* ============================================================
-   CONTACT SECTION
-   TODO: Style contact form
-   ============================================================ */
-.contact {
-    /* TODO: Section styling */
-}
-
-.contact h2 {
-    /* TODO: Section heading */
-}
-
-.contact__form {
-    /* TODO: Style contact form
-       Consider: max-width, centering */
-}
-
-.form-group {
-    /* TODO: Form group spacing */
-}
-
-.form-group label {
-    /* TODO: Label styles */
-}
-
-.form-group input,
-.form-group textarea {
-    /* TODO: Style form inputs
-     * - width: 100%
-     * - padding, border, border-radius
-     * - font-family, font-size
-     * - transition
-     */
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    /* TODO: Focus state */
-}
-
-.form-group textarea {
-    /* TODO: Textarea specific styles */
-}
-
-/* ============================================================
-   FOOTER
-   TODO: Style footer
-   ============================================================ */
-.footer {
-    /* TODO: Footer styling
-     * - background, color, padding
-     * - text-align
-     */
-}
-
-.footer .container {
-    /* TODO: Footer layout (Flexbox) */
-}
-
-.footer__social {
-    /* TODO: Social links container */
-}
-
-.footer__social a {
-    /* TODO: Social link styles */
-}
-
-.footer__social a:hover {
-    /* TODO: Social link hover */
-}
-
-/* ============================================================
-   RESPONSIVE BREAKPOINTS
-   TODO: Implement mobile-first responsive design
-
-   Start with mobile styles above, then add complexity
-   for larger screens below.
-   ============================================================ */
-
-/* Tablet (768px and up) */
 @media (min-width: 768px) {
-    /* TODO: Add tablet styles
-       - Adjust typography sizes
-       - Change layouts (Grid columns, Flexbox directions)
-       - Adjust spacing */
+    .about div{
+        display: grid;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+    .projects{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    .navbar{
+        flex-direction: column;
+    }
 }
 
 /* Desktop (1024px and up) */
 @media (min-width: 1024px) {
-    /* TODO: Add desktop styles
-       - Further layout adjustments
-       - Larger typography
-       - More spacing */
+    .projects{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
-    /* TODO: Add large desktop styles (optional) */
+    .projects-grid{
+        display: flex;
+        grid-template-columns: repeat(3 , 1fr);
+        justify-content: center;
+    }
+    .navbar{
+        justify-content: center;
+    }
 }
 
 /* ============================================================
