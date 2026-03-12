@@ -7,17 +7,29 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <input type="checkbox" id ="dark-toggle">
+    <label for="dark-toggle" class="toggle-btn">Dark Mode</label>
+
+
     <header>
         <nav class="navbar">
             <div class="logo">
               <img src="images/logo.png" alt="TMC logo">
             </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
             <ul class="nav">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
+
+            
         </nav>
 
     </header>
@@ -53,24 +65,25 @@
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-    <div class="project-card">
+    
+    <article class="project-card">
         <h3>School Library Management system</h3>
         <p>This project was about making  a library project that would help both the librarians and the student in terms of accessing the books. Books that were available were meant to be listed on list of books avaoilable and the librarians had a window for accessing who has borrowed a book and adding comments when it should be returned.Students were just supposed to access the system anywhere and check for the book and its book section in the library.</p>
          <img src="images/download.png" alt="pic of the library ">
          <a href="#">link for the website we almost created</a>
-   </div>
-   <div class="project-card">
+    </article>
+   <article class="project-card">
     <h3>event manager</h3>
     <p>This was a project that I planned to create based on my poor time management. The initial plan was to  make somrthing that can help me and others manage their time preciuosly by adding things that they plan to do in that day on the app and add their respective time for which the event is supposed to start and end</p>
     <img src="images/eventmanagement.png" alt="">
     <a href="#">github/eventmanagementsystem</a>
 
-   </div>
-   <div class="project-card">
+   </article>
+   <article class="project-card">
     <h3>Car Rent system</h3>
     <p>This was a site I almost created because I almost bought a car and I planned on  putting it on rent so that it can help me make more money to aslo buy another car while not spending the money i add at first. I alo inteded on expanding the system once it became known by others to also allow them to be puuting their cars on rent aswell</p>
     <img src="images/carrent.png" alt="github/carrentsystem">
-   </div>
+   </article>
    </div>
 </section>
 <section id="contact" class="contact">

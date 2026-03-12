@@ -47,7 +47,7 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
     --spacing-xl: 3rem  ;
 
     /* Layout */
-    --max-width: 110px;
+    --max-width: 1100px;
     --border-radius:  10px ;
 
     /* Transitions */
@@ -96,44 +96,54 @@ header{
     background: var(--color-background-alt);
     padding: var(--spacing-md);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
-    position: sticky;
     top: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .nav{
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 40px;
+    display:none;
+    flex-direction: column;
+    gap: 20px;
+    position: inherit;
+    top: 70px;
+    right: 20px;
+    background: var(--color-background-alt);
+    padding:var(--spacing-md);
+    border-radius: var(--border-radius);
 }
-.navbar{
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    padding: 15px 40px;
-}
-nav a{
+
+.nav a{
     text-decoration: none;
     font-weight: bold;
-}
-nav li a{
-    text-decoration: none;
     color: var(--color-text-light);
-    font-weight: bold;
-    font-size: 16px;
-    transition: var(--transition-normal);
-    text-align: right;
 }
-.navbar  li a:hover{
+nav a:hover{
     color: var(--color-primary);
 }
-.logo img{
+section{
+    padding: var(--spacing-xl);
+    animation: fadeIn 1s ease;
+}
+
+.logo{
     height: 80px;
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0%;
+    align-items: start;
 }
 .check{
     border-radius: 15px;
-
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 .home{
     text-align: center;
@@ -162,6 +172,11 @@ nav li a{
 .about h1{
     margin-bottom: var(--spacing-md);
 }
+.about h2{
+    margin-bottom: var(--spacing-md);
+    color: white;
+    text-align: center;
+}
 .about p{
     margin-bottom: var(--spacing-lg);
 }
@@ -188,22 +203,29 @@ nav li a{
     background: var(--color-primary);
 
 }
+.projects h2{
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-background);
+    font-weight: bold;
+}
 .project-grid{
     display: grid;
-    gap: 2rem;
-}
-.projects > div{
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    grid-template-columns: 1fr;
+
 }
+
 .project-card{
     background: white;
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .project-card:hover{
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .project-card h3{
     margin-bottom: var(--spacing-sm);
@@ -214,6 +236,7 @@ nav li a{
     color: var(--color-primary-dark);
     font-weight: bold;
 }
+
 .contact form{
     max-width: 600px;
     margin: 0 auto;
@@ -221,6 +244,15 @@ nav li a{
     flex-direction: column;
     gap: var(--spacing-md);
     
+}
+.contact label{
+    font-weight: bold;
+    color: var(--color-primary);
+}
+.contact h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
 }
 .contact input, .contact textarea{
     padding: 0.75rem;
@@ -245,54 +277,150 @@ footer ul{
     gap: var(--spacing-md);
     margin-top: var(--spacing-sm);
 }
+footer p{
+    margin-top: var(--spacing-md);
+    color: white;
+}
 footer a{
     color: white;
     text-decoration: none;
 
 }
 footer a:hover{
-    color: var(--color-secondary);
+    color: var(--color-primary-dark);
+}
+
+#dark-toggle{
+display: none;
+}
+toggle-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+#dark-toggle:checked ~ *{
+    background: black;
+    
 }
 
 
-
-
 @media (min-width: 768px) {
+    .nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+    }
     .about div{
         display: grid;
         gap: var(--spacing-lg);
         align-items: center;
     }
-    .projects{
+    .projects-grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
     }
-    .navbar{
-        flex-direction: column;
-    }
+   
+ 
+    
 }
 
-/* Desktop (1024px and up) */
+
 @media (min-width: 1024px) {
-    .projects{
-        grid-template-columns: repeat(3, 1fr);
+    .nav {
+        display:flex;
     }
-}
-
-/* Large Desktop (1200px and up) */
-@media (min-width: 1200px) {
     .projects-grid{
         display: flex;
         grid-template-columns: repeat(3 , 1fr);
         justify-content: center;
     }
     .navbar{
+        justify-content: flex;
+        gap: 30px;
+    }
+    .hamburger{
+        display: none;
+    }
+    
+}
+@media (max-width: 1200px) {
+    .nav{
+        display:none;
+    }
+    
+    .projects-grid{
+        display: flex;
+        grid-template-columns: repeat(3 , 1fr);
         justify-content: center;
     }
+    .navbar{
+        justify-content: flex;
+        gap: 30px;
+    }
+    
 }
 
 /* ============================================================
    ADDITIONAL STYLES
    TODO: Add any additional styles you need
    ============================================================ */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+section{
+    animation: fadeIn 1s ease;
+    padding: var(--spacing-xl);
+}
+
+
+@media print{
+    header,footer,nav,button,.hamburger{
+        display: none;
+    }
+    body{
+        background: white;
+        color: black;
+    }
+    section{
+        padding: 20px;
+    }
+    a{
+        text-decoration: underline;
+        color: black;
+    }
+}
+/* hamburger menu styles */
+#menu-toggle{
+    display: none;
+}
+.hamburger{
+    display:flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.hamburger span{
+    width: 25px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 2px;
+}
+#menu-toggle:checked ~ .nav{
+    display: flex;
+}
+
